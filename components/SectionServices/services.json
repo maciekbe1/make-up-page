@@ -1,0 +1,8 @@
+[
+  { "image": "/images/wieczorowy.jpg", "title": "Makijaż wieczorowy" },
+  { "image": "/images/dzienny.jpg", "title": "Makijaż dzienny" },
+  { "image": "/images/slubny.jpg", "title": "Makijaż ślubny" },
+  { "image": "/images/biznesowy.jpg", "title": "Makijaż biznesowy" },
+  { "image": "/images/sesja.jpg", "title": "Makijaż na sesje fotograficzną" },
+  { "image": "/images/sylwestrowy.jpg", "title": "Makijaż sylwestrowy" }
+]
