@@ -1,8 +1,10 @@
 import { Container, Grid } from "@mui/material";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
+import BlockContent from "@sanity/block-content-to-react";
+import serializers from "@components/utils/serializers";
 
-const SectionAbout = () => {
+const SectionAbout = ({ author }) => {
   return (
     <Container component="section" maxWidth="md" sx={{ mb: 15 }}>
       <div id="o-mnie"></div>
@@ -33,15 +35,7 @@ const SectionAbout = () => {
           >
             O mnie
           </Typography>
-          <Typography textAlign="center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-            consectetur, autem incidunt aliquid expedita assumenda, dolor atque
-            saepe recusandae rem ipsam? Mollitia soluta cupiditate assumenda,
-            illo doloribus itaque sit perferendis? Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Ducimus quis atque iure dolores
-            quibusdam incidunt qui nam accusantium aperiam. Harum at asperiores
-            nostrum aliquid ex dolorum consectetur odio maiores totam.
-          </Typography>
+          <BlockContent serializers={serializers} blocks={author.bio} />
         </Grid>
       </Grid>
     </Container>

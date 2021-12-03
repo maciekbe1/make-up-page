@@ -1,4 +1,3 @@
-import BlockContent from "@sanity/block-content-to-react";
 import { urlFor } from "lib/client";
 import Link from "next/link";
 import { Typography, Box } from "@mui/material";
@@ -55,7 +54,7 @@ const serializers = {
       if (props.children == "") {
         return <br />;
       }
-      return <Typography>{props.children}</Typography>;
+      return <div>{props.children}</div>;
     },
     image: (props) => {
       const {
@@ -109,8 +108,16 @@ const serializers = {
         </a>
       );
     },
+    right: ({ children }) => {
+      return <div style={{ textAlign: "right" }}>{children}</div>;
+    },
+    center: ({ children }) => {
+      return <div style={{ textAlign: "center" }}>{children}</div>;
+    },
+    justify: ({ children }) => {
+      return <div style={{ textAlign: "justify" }}>{children}</div>;
+    },
   },
 };
-export default function PostBody({ body }) {
-  return <BlockContent serializers={serializers} blocks={body} />;
-}
+
+export default serializers;

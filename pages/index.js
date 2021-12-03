@@ -5,9 +5,9 @@ import SectionReview from "@components/SectionReview";
 import SectionServices from "@components/SectionServices";
 import SectionPost from "@components/SectionPost";
 import PreviewAlert from "@components/PreviewAlert";
-import { getPaginatedPosts } from "lib/api";
+import { getAuthor, getPaginatedPosts } from "lib/api";
 
-const Home = ({ preview, posts }) => {
+const Home = ({ preview, posts, author }) => {
   return (
     <>
       <PreviewAlert preview={preview} />
@@ -17,7 +17,7 @@ const Home = ({ preview, posts }) => {
         title="Sara Bednarczyk"
         subtitle="Make-up Artist"
       />
-      <SectionAbout />
+      <SectionAbout author={author[0]} />
       <SectionServices />
       <SectionReview />
       <SectionPost posts={posts} />
@@ -26,10 +26,12 @@ const Home = ({ preview, posts }) => {
 };
 export async function getStaticProps({ preview = false }) {
   const posts = await getPaginatedPosts({ offset: 0, date: "desc" });
+  const author = await getAuthor();
   return {
     props: {
       posts,
       preview,
+      author,
     },
   };
 }
