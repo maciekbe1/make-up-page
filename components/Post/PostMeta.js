@@ -14,12 +14,7 @@ export default function PostMeta({ post }) {
             .map((item) => item.toLowerCase())}
         />
       )}
-      <meta
-        property="og:title"
-        content={post.title}
-        key="title"
-        key="ogtitle"
-      />
+      <meta property="og:title" content={post.title} key="ogtitle" />
       <meta property="og:description" content={post.subtitle} key="ogdesc" />
       <meta
         property="og:image"

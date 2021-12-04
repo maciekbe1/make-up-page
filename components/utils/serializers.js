@@ -56,7 +56,7 @@ const serializers = {
       }
       return <div>{props.children}</div>;
     },
-    image: (props) => {
+    Image: (props) => {
       const {
         node: { asset, alt, position = "center", crop, hotspot },
       } = props;
@@ -99,7 +99,12 @@ const serializers = {
     link: ({ mark, children }) => {
       const { blank, href } = mark;
       return blank ? (
-        <a href={href} target="_blank" rel="noopener" className="text-blue-500">
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className="text-blue-500"
+        >
           {children}
         </a>
       ) : (
