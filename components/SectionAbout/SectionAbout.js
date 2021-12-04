@@ -14,6 +14,7 @@ const SectionAbout = ({ author }) => {
             src="/images/artist.jpg"
             alt="artist"
             layout="responsive"
+            objectFit="cover"
             width={800}
             height={1100}
           />
